@@ -17,15 +17,14 @@ const Tile: React.FC<CanvasProps> = (props: CanvasProps) => {
   ];
 
   let random = Math.floor(Math.random() * colors.length);
+
   const [color, setColor] = useState(random);
 
   const handleClick = () => {
-    console.log("COLORs");
-    console.log(random);
     random = Math.floor(Math.random() * colors.length);
     setColor(random);
-    console.log(random);
   };
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   useEffect(() => {

@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import Input from "./Input";
 import CanvasContainer from "./CanvasContainer";
+import InputsSection from "./InputsSection";
 
-interface ManagementProps {}
-const Management: React.FC<ManagementProps> = (props: ManagementProps) => {
+const Management: React.FC = () => {
   const [row, setRow] = useState("4");
   const [col, setCol] = useState("4");
 
@@ -14,15 +13,10 @@ const Management: React.FC<ManagementProps> = (props: ManagementProps) => {
   const setNewCol = (userInputNew: string) => {
     setCol(userInputNew);
   };
-
   return (
     <>
-      <h1> Dancefloor</h1>
-      <Input title="Set column quantity" handleOnChange={setNewCol} />
-      <Input title="Set row quantity" handleOnChange={setNewRow} />
-      <input type="submit" value="Generate" />
-      <br />
-      <br />
+      <InputsSection setNewRow={setNewRow} setNewCol={setNewCol} />
+      <CanvasContainer rows={parseInt(row)} cols={parseInt(col)} />
     </>
   );
 };

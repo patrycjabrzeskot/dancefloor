@@ -1,15 +1,18 @@
 import React from "react";
 import Tile from "./Tile";
 
-const CanvasContainer: React.FC = () => {
-  const rows = 2;
-  const cols = 5;
-
+interface CanvasContainerProps {
+  rows: number;
+  cols: number;
+}
+const CanvasContainer: React.FC<CanvasContainerProps> = (
+  props: CanvasContainerProps
+) => {
   return (
     <>
-      {[...Array(rows)].map((e, j) => (
+      {[...Array(props.rows)].map((e, j) => (
         <>
-          {[...Array(cols)].map((e, i) => (
+          {[...Array(props.cols)].map((e, i) => (
             <Tile key={i} tileSize="150" />
           ))}
           <br />
