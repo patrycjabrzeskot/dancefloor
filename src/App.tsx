@@ -1,12 +1,15 @@
-import React from "react";
+import Canvas from "components/Canvas";
+import React, { useRef } from "react";
 import "./App.css";
 
-function App() {
+const App: React.FC = () => {
   return (
     <div className="App">
-      <header className="App-header"></header>
+      <header className="App-header">
+        <Canvas />
+      </header>
     </div>
   );
-}
+};
 
 export default App;
