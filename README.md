@@ -1,2 +1,2 @@
 # dancefloor
-dancefloor project for Packhelp demo day
+Dancefloor project for Packhelp demo day
